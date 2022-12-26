@@ -1,0 +1,26 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "blog_backend",
+        "type": "node",
+        "request": "attach",
+        "port": 9229,
+        "address": "localhost",
+        "localRoot": "${workspaceFolder}",
+        "protocol": "inspector",
+        "restart": true
+      },
+      {
+        "name": "docker blog_backend",
+        "type": "node",
+        "request": "attach",
+        "port": 9229,
+        "address": "localhost",
+        "remoteRoot": "/home/app/blog-backend",
+        "protocol": "inspector",
+        "restart": true
+      }
+    ]
+  }
+  
