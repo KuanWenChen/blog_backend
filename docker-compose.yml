@@ -1,0 +1,29 @@
+version: "3.0"
+
+services:
+  blog_backend:
+    container_name: blog_backend
+    image: blog_backend
+    build: .
+    ports:
+      - "3000:3000"
+      - "9229:9229"
+    volumes:
+      - blog-backend:/home/app/blog-backend
+      - .:/home/app/blog-backend
+      - /home/app/blog-backend/node_modules
+      - /home/app/blog-backend/.git
+      - /home/app/blog-backend/.vscode
+    environment:
+      - NODE_ENV=development
+    command: npm run start:debug
+    networks:
+      - micro-service
+
+networks:
+  micro-service:
+    external: true
+
+volumes:
+  blog-backend:
+    external: true
